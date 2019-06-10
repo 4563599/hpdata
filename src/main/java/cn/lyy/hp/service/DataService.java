@@ -25,7 +25,7 @@ public class DataService {
     public void getInfoByMin() {
         if (timer == null) {
             timer = new Timer();
-            timer.schedule(new TimerTask(), 0,1000);
+            timer.schedule(new TimerTask(), 0,60000);
         }
     }
 
