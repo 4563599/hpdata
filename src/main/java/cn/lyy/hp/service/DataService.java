@@ -23,9 +23,9 @@ public class DataService {
     Logger logger = Logger.getLogger(this.getClass());
 
     public void getInfoByMin() {
-        if (timer != null) {
+        if (timer == null) {
             timer = new Timer();
-            timer.schedule(new TimerTask(), 1000);
+            timer.schedule(new TimerTask(), 0,1000);
         }
     }
 

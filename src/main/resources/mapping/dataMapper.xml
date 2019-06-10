@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.lyy.hp.mapper.PictureMapper">
+<mapper namespace="cn.lyy.hp.mapper.DataMapper">
     <select id="getData" resultType="cn.lyy.hp.bean.Data">
         SELECT *
-        from table order
+        from pictures
+             order
              by
              id
              DESC
