@@ -21,11 +21,8 @@ public class HPDataController {
 
     @RequestMapping("/info")
     @ResponseBody
-    public String getItemCatList(@RequestParam(value = "collect_data", defaultValue = "0") String collect_data) {
+    public String getInfo(@RequestParam(value = "collect_data", defaultValue = "0") String collect_data) {
         log.error("data :  " + collect_data + "\n");
-        data.begin();
-        data.count();
-
         Date d = new Date();
         System.out.println(d);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -35,6 +32,14 @@ public class HPDataController {
         String result = "时间：    " + dateNowStr + "   数据:" + collect_data;
         messageHandler.sendMessageToUsers(new TextMessage(result));
         return collect_data;
+    }
+
+
+    @RequestMapping("/info_min")
+    @ResponseBody
+    public String getInfoByMin() {
+        //每分钟得到最新数据数据
+        return "";
     }
 
 

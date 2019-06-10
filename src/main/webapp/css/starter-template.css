@@ -1,0 +1,18 @@
+body {
+    padding-top: 50px;
+}
+
+.starter-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.button-row {
+    margin-top: 60px;
+    padding: 60px 100px;
+    text-align: center;
+}
+
+.btn btn-primary shake {
+    margin-top: 60px;
+}

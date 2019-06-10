@@ -7,14 +7,27 @@
     <title>Document</title>
     <!-- 引入在线资源 -->
     <script src="https://gw.alipayobjects.com/os/lib/antv/g2/3.4.10/dist/g2.min.js"></script>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css">
 </head>
 <body>
-<section class="wrapper">
-    <section id="c1"></section>
-    <section id="c2"></section>
-    <section id="c3"></section>
-</section>
+
+<div class="container">
+
+    <span id="shake1">shake1</span>
+    <span id="shake2">shake2</span>
+    <span id="shake3">shake3</span>
+
+
+    <section class="wrapper">
+        <section id="c1"></section>
+        <section id="c2"></section>
+        <section id="c3"></section>
+    </section>
+</div>
 <script>
+
+
     // const data = [
     //     {genre: 'Sports', sold: 275},
     //     {genre: 'Strategy', sold: 115},
@@ -37,11 +50,11 @@
 
     var websocket = null;
     if ('WebSocket' in window) {
-        websocket = new WebSocket("ws://120.77.144.115:8080/hp/websocket/webSocketServer.do");
+        websocket = new WebSocket("ws://120.77.144.115:8080/websocket/webSocketServer.do");
     } else if ('MozWebSocket' in window) {
-        websocket = new MozWebSocket("ws://120.77.144.115:8080/hp/websocket/webSocketServer.do");
+        websocket = new MozWebSocket("ws://120.77.144.115:8080/websocket/webSocketServer.do");
     } else {
-        websocket = new SockJS("http://120.77.144.115:8080/hp/sockjs/webSocketServer.do");
+        websocket = new SockJS("http://120.77.144.115:8080/sockjs/webSocketServer.do");
     }
 
     // 由于 G2 对数据源格式的要求，这里将数据转为 JSON 数组。
@@ -50,6 +63,9 @@
             d1Ary.push({'key': i, 'value': parseFloat(data[13 + 3 * i])});
             d2Ary.push({'key': i, 'value': parseFloat(data[14 + 3 * i])});
             d3Ary.push({'key': i, 'value': parseFloat(data[15 + 3 * i])});
+            $("#shake1").html("<span id=\"shake1\">" + parseFloat(data[13 + 3 * i]) + "</span>");
+            $("#shake2").html("<span id=\"shake2\">" + parseFloat(data[14 + 3 * i]) + "</span>");
+            $("#shake3").html("<span id=\"shake3\">" + parseFloat(data[15 + 3 * i]) + "</span>");
             callback(d1Ary, d2Ary, d3Ary);
         }
     }
@@ -68,18 +84,25 @@
         // Step 1: 创建 Chart 对象
         window[o] = new G2.Chart({
             container: container,  // 指定图表容器 ID
-            width: 600, // 指定图表宽度
+            width: 1200, // 指定图表宽度
             height: 300 // 指定图表高度
         });
 
         // Step 2: 载入数据源
         window[o].source([]);
 
+        window[o].scale('value', {
+            min: -0.01,
+            max: 0.01
+        });
+
         // Step 3：创建图形语法，绘制柱状图，由 key 和 value 两个属性决定图形位置，key 映射至 x 轴，value 映射至 y 轴
         window[o].line().position('key*value');
 
         // Step 4: 渲染图表
         window[o].render();
+
+
     }
 
     // 实例化3个 Chart 对象， 对应页面上三个图表。
@@ -92,6 +115,10 @@
         var wsDataAry = evt.data.split(' ');
         parseData(wsDataAry, render)
     };
+
 </script>
+
+<script src="../../jquery/jquery-2.1.1.min.js"></script>
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

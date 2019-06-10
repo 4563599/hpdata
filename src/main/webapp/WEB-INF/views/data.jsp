@@ -8,6 +8,7 @@
 <script type="text/javascript" src="http://120.77.144.115:8080/js/jquery.min.js"></script>
 <script type="text/javascript" src="http://120.77.144.115:8080/js/sockjs-0.3.4.min.js"></script>
 <script type="text/javascript">
+
     var websocket = null;
     if ('WebSocket' in window) {
         websocket = new WebSocket("ws://120.77.144.115:8080/websocket/webSocketServer.do");
@@ -45,6 +46,7 @@
         //         '<td class="tdClass">' + item.name + '</td>' +
         //         '</tr>')
         // }
+        alert(evt.data);
 
         var groupTable = $('#group');
         groupTable.prepend('<tr> ' +

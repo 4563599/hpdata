@@ -10,11 +10,11 @@
 <script type="text/javascript">
     var websocket = null;
     if ('WebSocket' in window) {
-        websocket = new WebSocket("ws://120.77.144.115:8080/hp/websocket/webSocketServer.do");
+        websocket = new WebSocket("ws://120.77.144.115:8080/websocket/webSocketServer.do");
     } else if ('MozWebSocket' in window) {
-        websocket = new MozWebSocket("ws://120.77.144.115:8080/hp/websocket/webSocketServer.do");
+        websocket = new MozWebSocket("ws://120.77.144.115:8080/websocket/webSocketServer.do");
     } else {
-        websocket = new SockJS("http://120.77.144.115:8080/hp/sockjs/webSocketServer.do");
+        websocket = new SockJS("http://120.77.144.115:8080/sockjs/webSocketServer.do");
     }
     websocket.onopen = onOpen;
     websocket.onmessage = onMessage;
