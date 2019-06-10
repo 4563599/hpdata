@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.lyy.hp.mapper.PictureMapper">
-    <insert id="insertPicture" parameterType="cn.lyy.hp.bean.Data">
-        INSERT INTO pictures (pic_name, pic_url, update_time
-        )
-        VALUES (#{pic_name}, #{pic_url}, #{update_time})
-    </insert>
+    <select id="getData" resultType="cn.lyy.hp.bean.Data">
+        SELECT *
+        from table order
+             by
+             id
+             DESC
+             limit
+             1
+    </select>
 
 </mapper>

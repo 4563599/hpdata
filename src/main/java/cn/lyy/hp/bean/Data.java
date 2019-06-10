@@ -1,6 +1,6 @@
 package cn.lyy.hp.bean;
 
-public class Picture {
+public class Data {
     String pic_name;
     String pic_url;
     String time;
@@ -29,9 +29,11 @@ public class Picture {
         this.time = time;
     }
 
-    public Picture(String pic_name, String pic_url, String time) {
+    public Data(String pic_name, String pic_url, String time) {
         this.pic_name = pic_name;
         this.pic_url = pic_url;
         this.time = time;
     }
+
+
 }

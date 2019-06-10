@@ -1,8 +1,10 @@
 package cn.lyy.hp.controller;
 
 import cn.lyy.hp.data.Data;
+import cn.lyy.hp.service.DataService;
 import cn.lyy.hp.websocket.ChatMessageHandler;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +16,9 @@ import java.util.Date;
 
 @Controller
 public class HPDataController {
+
+    @Autowired
+    DataService dataService;
 
     private Logger log = Logger.getLogger(HPDataController.class);
     private Data data = Data.getInstance();
@@ -39,6 +44,7 @@ public class HPDataController {
     @ResponseBody
     public String getInfoByMin() {
         //每分钟得到最新数据数据
+        dataService.getInfoByMin();
         return "";
     }
 
