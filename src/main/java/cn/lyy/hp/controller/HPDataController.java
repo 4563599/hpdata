@@ -1,5 +1,6 @@
 package cn.lyy.hp.controller;
 
+import cn.lyy.hp.bean.SimpleDatasBean;
 import cn.lyy.hp.data.Data;
 import cn.lyy.hp.service.DataService;
 import cn.lyy.hp.websocket.ChatMessageHandler;
@@ -42,10 +43,9 @@ public class HPDataController {
 
     @RequestMapping("/info_min")
     @ResponseBody
-    public String getInfoByMin() {
+    public SimpleDatasBean getInfoByMin() {
         //每分钟得到最新数据数据
-        dataService.getInfoByMin();
-        return "";
+        return dataService.getInfoByMin();
     }
 
 

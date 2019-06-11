@@ -5,39 +5,73 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class SimpleDatasBean {
-    private List<DatasBean.DataBean> data;
+    private List<DataBean> data;
 
-    public List<DatasBean.DataBean> getData() {
+    public List<DataBean> getData() {
         return data;
     }
 
-    public void setData(List<DatasBean.DataBean> data) {
+    public void setData(List<DataBean> data) {
         this.data = data;
     }
 
     public static class DataBean {
+        private String T1;
+        private String Humidity1;
+        private String Pressure1;
+        private String rainfall;
+        private String A1;
+        private String stressy;
 
-        private String Humidity_1;
-        private String Pressure_1;
         private String Time;
-        private String stress_xy_2;
-        private String stress_y_2;
-        private String A_1;
 
-        public String getHumidity_1() {
-            return Humidity_1;
+
+        public String getT1() {
+            return T1;
         }
 
-        public void setHumidity_1(String humidity_1) {
-            Humidity_1 = humidity_1;
+        public void setT1(String t1) {
+            T1 = t1;
         }
 
-        public String getPressure_1() {
-            return Pressure_1;
+        public String getHumidity1() {
+            return Humidity1;
         }
 
-        public void setPressure_1(String pressure_1) {
-            Pressure_1 = pressure_1;
+        public void setHumidity1(String humidity1) {
+            Humidity1 = humidity1;
+        }
+
+        public String getPressure1() {
+            return Pressure1;
+        }
+
+        public void setPressure1(String pressure1) {
+            Pressure1 = pressure1;
+        }
+
+        public String getRainfall() {
+            return rainfall;
+        }
+
+        public void setRainfall(String rainfall) {
+            this.rainfall = rainfall;
+        }
+
+        public String getA1() {
+            return A1;
+        }
+
+        public void setA1(String a1) {
+            A1 = a1;
+        }
+
+        public String getStressy() {
+            return stressy;
+        }
+
+        public void setStressy(String stressy) {
+            this.stressy = stressy;
         }
 
         public String getTime() {
@@ -46,30 +80,6 @@ public class SimpleDatasBean {
 
         public void setTime(String time) {
             Time = time;
-        }
-
-        public String getStress_xy_2() {
-            return stress_xy_2;
-        }
-
-        public void setStress_xy_2(String stress_xy_2) {
-            this.stress_xy_2 = stress_xy_2;
-        }
-
-        public String getStress_y_2() {
-            return stress_y_2;
-        }
-
-        public void setStress_y_2(String stress_y_2) {
-            this.stress_y_2 = stress_y_2;
-        }
-
-        public String getA_1() {
-            return A_1;
-        }
-
-        public void setA_1(String a_1) {
-            A_1 = a_1;
         }
     }
 }
