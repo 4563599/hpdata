@@ -1,46 +1,3 @@
-<%--<%@ page language="java" import="java.util.*" pageEncoding="utf-8" %>--%>
-<%--<%--%>
-<%--String path = request.getContextPath();--%>
-<%--String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";--%>
-<%--%>--%>
-
-<%--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">--%>
-<%--<html>--%>
-<%--<head>--%>
-<%--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"--%>
-<%--integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">--%>
-<%--<base href="<%=basePath%>">--%>
-<%--<meta charset="utf-8">--%>
-<%--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">--%>
-<%--<style type="text/css">--%>
-<%--form {--%>
-<%--margin: 0px auto;--%>
-
-<%--width: 500px;--%>
-<%--padding: 20px;--%>
-<%--}--%>
-<%--</style>--%>
-<%--<title></title>--%>
-
-<%--</head>--%>
-
-<%--<body>--%>
-
-
-<%--<div id="output"></div>--%>
-
-<%--<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"--%>
-<%--integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"--%>
-<%--crossorigin="anonymous"></script>--%>
-<%--<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"--%>
-<%--integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"--%>
-<%--crossorigin="anonymous"></script>--%>
-<%--<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"--%>
-<%--integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"--%>
-<%--crossorigin="anonymous"></script>--%>
-<%--</body>--%>
-<%--</html>--%>
-
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8" %>
 <%
     String path = request.getContextPath();
@@ -65,7 +22,6 @@
     <![endif]-->
 </head>
 <body>
-
 <div class="container">
 
 
@@ -95,10 +51,18 @@
     <div class="starter-template">
         <h1>滑坡数据采集系统</h1>
 
-        <div >
+        <div>
             <div class="button-row">
                 <a href="chart" class="btn btn-primary shake active" role="button">震动数据监测</a>
                 <button type="button" class="btn btn-primary fun2">应力数据监测</button>
+                <div class="button-row">
+
+                    <div class="form-group">
+                        <label for="jpush_test">推送数据测试</label>
+                        <input type="text" class="form-control" id="jpush_test" placeholder="请填入需要推送的内容">
+                        <button class="btn btn-default" id="test_jpush_btn">提交</button>
+                    </div>
+                </div>
             </div>
         </div>
         <%--<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a--%>
@@ -109,8 +73,28 @@
 <%--<a href="test"><h1>跳转测试</h1></a>--%>
 
 <%--<a href="data"><h1>数据采集</h1></a>--%>
-
 <script src="../../jquery/jquery-2.1.1.min.js"></script>
 <script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#test_jpush_btn").click(function(){
+            var content = $("#jpush_test").val();
+            $.ajax({
+                url: "${APP_PATH}/jpush/push.do",
+                data: {'content': content},
+                dataType: 'JSON',
+                type: 'post',
+                success: function (data) {
+                    if (data.msg == 'OK') {
+                        alert('成功');
+                    } else {
+                        alert('失败');
+                    }
+                }
+            });
+        });
+    });
+</script>
+
 </body>
 </html>

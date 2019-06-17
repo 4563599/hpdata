@@ -1,8 +1,13 @@
 package cn.lyy.hp.controller;
 
+import cn.jpush.api.JPushClient;
+import cn.jpush.api.push.PushResult;
+import cn.jpush.api.push.model.PushPayload;
 import cn.lyy.hp.bean.SimpleDatasBean;
 import cn.lyy.hp.data.Data;
 import cn.lyy.hp.service.DataService;
+import cn.lyy.hp.utils.AjaxResult;
+import cn.lyy.hp.utils.JpushUtil;
 import cn.lyy.hp.websocket.ChatMessageHandler;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +18,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.socket.TextMessage;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class HPDataController {
@@ -59,5 +66,30 @@ public class HPDataController {
     public String toChart() {
         return "chart";
     }
+
+
+    @RequestMapping("/jpush/push.do")
+    @ResponseBody
+    public AjaxResult doAdd(String content) {
+        AjaxResult result = new AjaxResult();
+
+        try {
+            JPushClient jpushClient = new JPushClient("1a5856e2537f13e737b27eed", "c21203d1078ef607b2d2133d");
+
+            //创建推送对象，举例：根据别名推送通知，具体方法实现在下边的工具类中
+            List<String> list = new ArrayList<>();
+            list.add("all");
+            PushPayload pushPayload = JpushUtil.buildPushObject_all_aliases_alertWithTitle(list, "滑坡提醒", content, null);
+            //进行推送
+            PushResult pushResult = jpushClient.sendPush(pushPayload);
+            result.setData(pushResult);
+            result.setSuccess(true);
+        } catch (Exception e) {
+            result.setSuccess(false);
+            System.out.println("推送失败");
+        }
+        return result;
+    }
+
 
 }
