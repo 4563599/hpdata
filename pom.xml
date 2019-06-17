@@ -12,7 +12,7 @@
     <artifactId>hp</artifactId>
     <version>1.0</version>
     <name>hp</name>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <description>Demo project for Spring Boot</description>
 
     <properties>

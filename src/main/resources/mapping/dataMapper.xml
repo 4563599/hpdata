@@ -3,7 +3,7 @@
 <mapper namespace="cn.lyy.hp.mapper.DataMapper">
     <select id="getData" resultType="cn.lyy.hp.bean.Data">
         SELECT *
-        from pictures
+        from datas
              order
              by
              id

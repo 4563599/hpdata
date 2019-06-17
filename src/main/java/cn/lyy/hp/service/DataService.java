@@ -30,7 +30,7 @@ public class DataService {
             Gson gson = new Gson();
             SimpleDatasBean dataBean = gson.fromJson(datas, SimpleDatasBean.class);
             //messageHandler.sendMessageToUsers(new TextMessage(gson.toJson(dataBean)));
-            //logger.error(datas);
+            logger.error(datas);
             return dataBean;
         }
         return null;

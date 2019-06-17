@@ -58,7 +58,12 @@ public class PictureController {
             String url = IMAGE_SERVER_URL + path;
             //存入数据库
             String time = DateUtils.getCurrentDateTime();
-            pictureService.addPicture(originalFilename, url, time);
+            if(originalFilename.contains(".png")){
+                pictureService.addPicture(originalFilename, url, time);
+            }else {
+                pictureService.addData(originalFilename, url, time);
+            }
+
 
             datContorller.readDat(originalFilename, url, time);
             return new UploadURLResult(CommonCode.SUCCESS, originalFilename, url, time);

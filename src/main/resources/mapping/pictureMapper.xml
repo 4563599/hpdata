@@ -7,4 +7,11 @@
         VALUES (#{pic_name}, #{pic_url}, #{update_time})
     </insert>
 
+
+    <insert id="insertData" parameterType="cn.lyy.hp.bean.Data">
+        INSERT INTO datas (pic_name, pic_url, update_time
+        )
+        VALUES (#{pic_name}, #{pic_url}, #{update_time})
+    </insert>
+
 </mapper>

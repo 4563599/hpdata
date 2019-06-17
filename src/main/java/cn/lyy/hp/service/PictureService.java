@@ -15,5 +15,7 @@ public class PictureService {
         pictureMapper.insertPicture(pic_name, pic_url, update_time);
     }
 
-
+    public void addData(String pic_name, String pic_url, String update_time) {
+        pictureMapper.insertData(pic_name, pic_url, update_time);
+    }
 }
