@@ -44,8 +44,7 @@ public class PictureController {
     @Autowired
     PictureService pictureService;
 
-    @Autowired
-    DatContorller datContorller;
+
     private OSSClientUtil ossClientUtil;
 
     private ChatMessageHandler messageHandler = new ChatMessageHandler();
@@ -80,6 +79,7 @@ public class PictureController {
             ossClientUtil.destory();
             return new UploadURLResult(CommonCode.SUCCESS, originalFilename, imgUrl, time);
         } catch (Exception e) {
+            ossClientUtil.destory();
             e.printStackTrace();
             return new UploadURLResult(CommonCode.FAIL, "");
         }

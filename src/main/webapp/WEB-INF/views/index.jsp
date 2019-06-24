@@ -14,11 +14,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/font-awesome.min.css">
+    <link rel="stylesheet" href="${APP_PATH}/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${APP_PATH}/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
-    <link href="../../css/starter-template.css" rel="stylesheet">
+    <link href="${APP_PATH}/css/starter-template.css" rel="stylesheet">
     <![endif]-->
 </head>
 <body>
@@ -73,8 +73,8 @@
 <%--<a href="test"><h1>跳转测试</h1></a>--%>
 
 <%--<a href="data"><h1>数据采集</h1></a>--%>
-<script src="../../jquery/jquery-2.1.1.min.js"></script>
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="${APP_PATH}/jquery/jquery-2.1.1.min.js"></script>
+<script src="${APP_PATH}/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     $(function () {
         $("#test_jpush_btn").click(function(){

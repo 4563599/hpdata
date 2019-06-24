@@ -15,7 +15,7 @@
 <body>
 <%--<input type="file" capture="camera" accept="images/*" id="upload" name="file">--%>
 #web网页上传图片格式   method="post" 采用post提交  action="/upload" 为提交IP地址  enctype="multipart/form-data告诉浏览器文件类型
-<form method="post" action="/upload_pic" enctype="multipart/form-data">
+<form method="post" action="${APP_PATH}/upload_pic" enctype="multipart/form-data">
     <input type="file" name="uploadFile"><br>
     <input type="submit" value="提交">
 </form>

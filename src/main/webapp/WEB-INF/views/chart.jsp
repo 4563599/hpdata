@@ -7,8 +7,8 @@
     <title>Document</title>
     <!-- 引入在线资源 -->
     <script src="https://gw.alipayobjects.com/os/lib/antv/g2/3.4.10/dist/g2.min.js"></script>
-    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/font-awesome.min.css">
+    <link rel="stylesheet" href="${APP_PATH}/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${APP_PATH}/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -118,7 +118,7 @@
 
 </script>
 
-<script src="../../jquery/jquery-2.1.1.min.js"></script>
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="${APP_PATH}/jquery/jquery-2.1.1.min.js"></script>
+<script src="${APP_PATH}/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
