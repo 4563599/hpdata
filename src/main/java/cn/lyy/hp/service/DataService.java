@@ -2,6 +2,7 @@ package cn.lyy.hp.service;
 
 import cn.lyy.hp.bean.Data;
 import cn.lyy.hp.bean.SimpleDatasBean;
+import cn.lyy.hp.filesystem.response.ResponseResult;
 import cn.lyy.hp.mapper.DataMapper;
 import cn.lyy.hp.utils.FileUtils;
 import cn.lyy.hp.websocket.ChatMessageHandler;
@@ -9,6 +10,7 @@ import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Timer;
 
 import org.apache.log4j.Logger;
@@ -35,4 +37,9 @@ public class DataService {
         }
         return null;
     }
+
+    public SimpleDatasBean getPictures() {
+        return dataMapper.getPictures();
+    }
+
 }

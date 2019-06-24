@@ -59,7 +59,7 @@
 
                     <div class="form-group">
                         <label for="jpush_test">推送数据测试</label>
-                        <input type="text" class="form-control" id="jpush_test" placeholder="请填入需要推送的内容">
+                        <input type="text" class="form-control" id="jpush_test" placeholder="滑坡概率>90,请注意!">
                         <button class="btn btn-default" id="test_jpush_btn">提交</button>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                 dataType: 'JSON',
                 type: 'post',
                 success: function (data) {
-                    if (data.msg == 'OK') {
+                    if (data.success == true) {
                         alert('成功');
                     } else {
                         alert('失败');

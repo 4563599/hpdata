@@ -12,4 +12,15 @@
              1
     </select>
 
+
+    <select id="getPictures" resultType="cn.lyy.hp.bean.Data">
+        SELECT *
+        from pictures
+        order
+            by
+            id
+            DESC
+            limit
+            6
+    </select>
 </mapper>

@@ -29,4 +29,9 @@ public class HomeController {
         return "upload_test";
     }
 
+    @GetMapping(value = "/upload_test_oss")
+    public String upload_test_oss() {
+        return "upload_test_oss";
+    }
+
 }

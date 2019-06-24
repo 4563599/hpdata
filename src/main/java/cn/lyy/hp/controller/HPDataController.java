@@ -5,6 +5,7 @@ import cn.jpush.api.push.PushResult;
 import cn.jpush.api.push.model.PushPayload;
 import cn.lyy.hp.bean.SimpleDatasBean;
 import cn.lyy.hp.data.Data;
+import cn.lyy.hp.filesystem.response.ResponseResult;
 import cn.lyy.hp.service.DataService;
 import cn.lyy.hp.utils.AjaxResult;
 import cn.lyy.hp.utils.JpushUtil;
@@ -53,6 +54,13 @@ public class HPDataController {
     public SimpleDatasBean getInfoByMin() {
         //每分钟得到最新数据数据
         return dataService.getInfoByMin();
+    }
+
+    @RequestMapping("/getPictures")
+    @ResponseBody
+    public SimpleDatasBean getPictures() {
+        //每分钟得到最新数据数据
+        return dataService.getPictures();
     }
 
 
