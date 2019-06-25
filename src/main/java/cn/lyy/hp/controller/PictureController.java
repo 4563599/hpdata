@@ -1,5 +1,6 @@
 package cn.lyy.hp.controller;
 
+import cn.lyy.hp.bean.SimpleDatasBean;
 import cn.lyy.hp.fastdfs.FastDFSClient;
 import cn.lyy.hp.filesystem.response.CommonCode;
 import cn.lyy.hp.filesystem.response.ResponseResult;
@@ -15,6 +16,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.aliyun.oss.OSSClient;
 import com.google.gson.Gson;
 import org.apache.jasper.tagplugins.jstl.core.Url;
+import org.apache.log4j.Logger;
 import org.csource.fastdfs.FileInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -44,7 +46,7 @@ public class PictureController {
     @Autowired
     PictureService pictureService;
 
-
+    private Logger logger = Logger.getLogger(getClass());
     private OSSClientUtil ossClientUtil;
 
     private ChatMessageHandler messageHandler = new ChatMessageHandler();
@@ -77,6 +79,25 @@ public class PictureController {
             }
 
             ossClientUtil.destory();
+            String json = FileUtils.readOSSDat(KEY + name);
+            json = "{\"data\":" + json + "}";
+            Gson gson = new Gson();
+            SimpleDatasBean dataBean = gson.fromJson(json, SimpleDatasBean.class);
+            String get_time = dataBean.getData().get(dataBean.getData().size() - 1).getTime();
+            String t1 = dataBean.getData().get(dataBean.getData().size() - 1).getT1();
+            String humidity1 = dataBean.getData().get(dataBean.getData().size() - 1).getHumidity1();
+            String pressure1 = dataBean.getData().get(dataBean.getData().size() - 1).getPressure1();
+            String rainfall = dataBean.getData().get(dataBean.getData().size() - 1).getRainfall();
+            String a1 = dataBean.getData().get(dataBean.getData().size() - 1).getA1();
+            String stressy = dataBean.getData().get(dataBean.getData().size() - 1).getStressy();
+            pictureService.insertT1(get_time, t1);
+            pictureService.insertHumidity1(get_time, humidity1, pressure1, rainfall, a1, stressy);
+            pictureService.insertPressure1(get_time, humidity1, pressure1, rainfall, a1, stressy);
+            pictureService.insertRainfall(get_time, humidity1, pressure1, rainfall, a1, stressy);
+            pictureService.insertA1(get_time, humidity1, pressure1, rainfall, a1, stressy);
+            pictureService.insertStressy(get_time, humidity1, pressure1, rainfall, a1, stressy);
+
+            logger.error(json);
             return new UploadURLResult(CommonCode.SUCCESS, originalFilename, imgUrl, time);
         } catch (Exception e) {
             ossClientUtil.destory();

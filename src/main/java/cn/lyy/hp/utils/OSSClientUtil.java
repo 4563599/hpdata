@@ -164,6 +164,9 @@ public class OSSClientUtil {
         if (FilenameExtension.equalsIgnoreCase(".xml")) {
             return "text/xml";
         }
+        if (FilenameExtension.equalsIgnoreCase(".dat")) {
+            return "text/plain";
+        }
         return "image/jpeg";
     }
 
