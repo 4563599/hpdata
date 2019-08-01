@@ -4,12 +4,12 @@
     <select id="getData" resultType="cn.lyy.hp.bean.Data">
         SELECT *
         from datas
-             order
-             by
-             id
-             DESC
-             limit
-             1
+        order
+        by
+        id
+        DESC
+        limit
+        1
     </select>
 
 
@@ -17,10 +17,10 @@
         SELECT *
         from pictures
         order
-            by
-            id
-            DESC
-            limit
-            6
+        by
+        id
+        DESC
+        limit
+        6
     </select>
 </mapper>

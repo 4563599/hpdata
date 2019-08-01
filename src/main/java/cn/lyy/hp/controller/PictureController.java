@@ -65,10 +65,7 @@ public class PictureController {
             String originalFilename = uploadFile.getOriginalFilename();
             String extName = originalFilename.substring(originalFilename.lastIndexOf(".") + 1);
             String time = DateUtils.getCurrentDateTime();
-            if (ossClientUtil == null) {
-                ossClientUtil = new OSSClientUtil();
-            }
-            ossClientUtil.init();
+            ossClientUtil = new OSSClientUtil();
             String name = ossClientUtil.uploadImg2Oss(uploadFile);
             String imgUrl = ossClientUtil.getImgUrl(name);
             if (originalFilename.contains(".png")) {
@@ -78,7 +75,6 @@ public class PictureController {
                 pictureService.addData(originalFilename, imgUrl, time);
             }
 
-            ossClientUtil.destory();
             String json = FileUtils.readOSSDat(KEY + name);
             json = "{\"data\":" + json + "}";
             Gson gson = new Gson();
@@ -89,20 +85,20 @@ public class PictureController {
             String pressure1 = dataBean.getData().get(dataBean.getData().size() - 1).getPressure1();
             String rainfall = dataBean.getData().get(dataBean.getData().size() - 1).getRainfall();
             String a1 = dataBean.getData().get(dataBean.getData().size() - 1).getA1();
-            String stressy = dataBean.getData().get(dataBean.getData().size() - 1).getStressy();
+            String stressy = dataBean.getData().get(dataBean.getData().size() - 1).getStressyz1();
             pictureService.insertT1(get_time, t1);
             pictureService.insertHumidity1(get_time, humidity1, pressure1, rainfall, a1, stressy);
             pictureService.insertPressure1(get_time, humidity1, pressure1, rainfall, a1, stressy);
             pictureService.insertRainfall(get_time, humidity1, pressure1, rainfall, a1, stressy);
             pictureService.insertA1(get_time, humidity1, pressure1, rainfall, a1, stressy);
             pictureService.insertStressy(get_time, humidity1, pressure1, rainfall, a1, stressy);
-
-            logger.error(json);
             return new UploadURLResult(CommonCode.SUCCESS, originalFilename, imgUrl, time);
         } catch (Exception e) {
-            ossClientUtil.destory();
+            logger.error(e.toString());
             e.printStackTrace();
             return new UploadURLResult(CommonCode.FAIL, "");
+        } finally {
+            ossClientUtil.destory();
         }
 
     }
@@ -139,12 +135,15 @@ public class PictureController {
 //            e.printStackTrace();
 //        }
         try {
+            ossClientUtil = new OSSClientUtil();
             String time = DateUtils.getCurrentDateTime();
             String name = ossClientUtil.uploadImg2Oss(uploadFile);
             String imgUrl = ossClientUtil.getImgUrl(name);
             return new UploadURLResult(CommonCode.SUCCESS, name, imgUrl, time);
         } catch (Exception e) {
             return new UploadURLResult(CommonCode.FAIL, "");
+        } finally {
+            ossClientUtil.destory();
         }
     }
 

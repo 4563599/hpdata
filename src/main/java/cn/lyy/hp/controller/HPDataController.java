@@ -5,6 +5,7 @@ import cn.jpush.api.push.PushResult;
 import cn.jpush.api.push.model.PushPayload;
 import cn.lyy.hp.bean.SimpleDatasBean;
 import cn.lyy.hp.data.Data;
+import cn.lyy.hp.filesystem.response.CommonCode;
 import cn.lyy.hp.filesystem.response.ResponseResult;
 import cn.lyy.hp.service.DataService;
 import cn.lyy.hp.utils.AjaxResult;
@@ -33,19 +34,20 @@ public class HPDataController {
     private Data data = Data.getInstance();
     private ChatMessageHandler messageHandler = new ChatMessageHandler();
 
-    @RequestMapping("/info")
+    @RequestMapping("/upload_data")
     @ResponseBody
-    public String getInfo(@RequestParam(value = "collect_data", defaultValue = "0") String collect_data) {
-        log.error("data :  " + collect_data + "\n");
+    public ResponseResult getInfo(@RequestParam(value = "datas", defaultValue = "0") String datas) {
+        log.debug("data :  " + datas + "\n");
         Date d = new Date();
         System.out.println(d);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dateNowStr = sdf.format(d);
 
 //        String result = "时间-" + dateNowStr + "数据-" + collect_data;
-        String result = "时间：    " + dateNowStr + "   数据:" + collect_data;
+        String result = "时间：    " + dateNowStr + "   数据:" + datas;
+        ResponseResult responseResult = new ResponseResult(CommonCode.SUCCESS, datas);
         messageHandler.sendMessageToUsers(new TextMessage(result));
-        return collect_data;
+        return responseResult;
     }
 
 

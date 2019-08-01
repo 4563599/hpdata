@@ -21,7 +21,7 @@ public class SimpleDatasBean {
         private String Pressure1;
         private String rainfall;
         private String A1;
-        private String stressy;
+        private String stressyz1;
 
         private String Time;
 
@@ -66,12 +66,12 @@ public class SimpleDatasBean {
             A1 = a1;
         }
 
-        public String getStressy() {
-            return stressy;
+        public String getStressyz1() {
+            return stressyz1;
         }
 
-        public void setStressy(String stressy) {
-            this.stressy = stressy;
+        public void setStressyz1(String stressyz1) {
+            this.stressyz1 = stressyz1;
         }
 
         public String getTime() {
