@@ -1,14 +1,25 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <!-- 引入在线资源 -->
-    <script src="https://gw.alipayobjects.com/os/lib/antv/g2/3.4.10/dist/g2.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <link rel="stylesheet" href="${APP_PATH}/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="${APP_PATH}/css/font-awesome.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="${APP_PATH}/css/starter-template.css" rel="stylesheet">
+    <![endif]-->
 </head>
 <body>
 

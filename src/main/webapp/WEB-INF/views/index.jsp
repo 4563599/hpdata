@@ -23,50 +23,41 @@
 </head>
 <body>
 <div class="container">
+    <%@include file="/WEB-INF/views/common/header.jsp" %>
 
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <h2>滑坡及地质数据采集系统</h2>
+        <p class="lead">
+            基于数据的地质灾害监测预警平台，是在将各种专业地质灾害监测设备与物联网和通信技术的集成的基础上，构建地质灾害监测、分析、预报、预警和应急服务于一体的信息化、智能化和可视化服务平台，实现灾前、灾中、灾后全生命周期动态管理，全面提升相关单位对突发性地质灾害的分析、预警、处置和服务的能力，为政府相关部门进行地质环境与地质灾害决策管理和社会服务提供技术保障.</p>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">地质数据采集与实时监测系统</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="data">数据采集</a></li>
-                    <li><a href="test">数据上传测试</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
-    </nav>
+        <div class="alert alert-danger" role="alert" style="width: 50%">当前滑坡概率 18%</div>
 
-
-    <div class="starter-template">
-        <h1>滑坡数据采集系统</h1>
-
-        <div>
-            <div class="button-row">
-                <a href="chart" class="btn btn-primary shake active" role="button">震动数据监测</a>
-                <button type="button" class="btn btn-primary fun2">应力数据监测</button>
-                <div class="button-row">
-
-                    <div class="form-group">
-                        <label for="jpush_test">推送数据测试</label>
-                        <input type="text" class="form-control" id="jpush_test" placeholder="滑坡概率>90,请注意!">
-                        <button class="btn btn-default" id="test_jpush_btn">提交</button>
-                    </div>
-                </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="18"
+                 aria-valuemin="0" aria-valuemax="100" style="width: 18%">
+                <span class="sr-only">18% Complete</span>
             </div>
         </div>
-        <%--<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a--%>
-        <%--mostly barebones HTML document.</p>--%>
+    </div>
+
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-lg-4">
+            <h2>温度数据监测</h2>
+            <p class="text-danger">采用VI子程序技术作为温度值的输入，设置了温度值的输出模式（摄氏或华氏），输出数据统计信息包括最大值、最小值、平均值，运行后的动态显示到界面文本.</p>
+            <p><a class="btn btn-primary" href="${APP_PATH}/t_page" role="button">点击查看详细数据 &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+            <h2>湿度数据监测</h2>
+            <p class="text-danger">采用VI子程序技术作为温度值的输入，设置了湿度的输出模式，输出数据统计信息包括最大值、最小值、平均值，运行后的动态显示到界面文本.</p>
+            <p><a class="btn btn-primary" href="#" role="button">点击查看详细数据 &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+            <h2>孔隙压数据监测</h2>
+            <p class="text-danger">采用VI子程序技术作为空隙压的输入，设置了空隙压的输出模式，输出数据统计信息包括最大值、最小值、平均值，运行后的动态显示到界面文本.</p>
+            <p><a class="btn btn-primary" href="#" role="button">点击查看详细数据 &raquo;</a></p>
+        </div>
     </div>
 
 </div><!-- /.container -->
@@ -77,7 +68,7 @@
 <script src="${APP_PATH}/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     $(function () {
-        $("#test_jpush_btn").click(function(){
+        $("#test_jpush_btn").click(function () {
             var content = $("#jpush_test").val();
             $.ajax({
                 url: "${APP_PATH}/jpush/push.do",
