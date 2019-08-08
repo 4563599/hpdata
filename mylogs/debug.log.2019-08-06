@@ -1,0 +1,36 @@
+2019-08-06 13:55:18  [ http-nio-8080-exec-10:62563666 ] - [ DEBUG ]  GET "/index", parameters={}
+2019-08-06 13:55:18  [ http-nio-8080-exec-10:62563712 ] - [ DEBUG ]  Mapped to public java.lang.String cn.lyy.hp.controller.HomeController.home()
+2019-08-06 13:55:18  [ http-nio-8080-exec-10:62563726 ] - [ INFO ]  ---------------request----------------
+2019-08-06 13:55:18  [ http-nio-8080-exec-10:62563730 ] - [ INFO ]  URL : http://localhost:8080/index
+2019-08-06 13:55:18  [ http-nio-8080-exec-10:62563730 ] - [ INFO ]  HTTP_METHOD : GET
+2019-08-06 13:55:18  [ http-nio-8080-exec-10:62563731 ] - [ INFO ]  IP : 0:0:0:0:0:0:0:1
+2019-08-06 13:55:18  [ http-nio-8080-exec-10:62563732 ] - [ INFO ]  ---------------response----------------
+2019-08-06 13:55:18  [ http-nio-8080-exec-10:62563732 ] - [ INFO ]  RESPONSE : index
+2019-08-06 13:55:18  [ http-nio-8080-exec-10:62563747 ] - [ DEBUG ]  Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, image/apng, application/signed-exchange;v=b3, application/xml;q=0.9, */*;q=0.8]
+2019-08-06 13:55:18  [ http-nio-8080-exec-10:62563748 ] - [ DEBUG ]  View name 'index', model {}
+2019-08-06 13:55:18  [ http-nio-8080-exec-10:62563751 ] - [ DEBUG ]  Forwarding to [/WEB-INF/views/index.jsp]
+2019-08-06 13:55:18  [ http-nio-8080-exec-10:62563762 ] - [ DEBUG ]  Completed 200 OK
+2019-08-06 13:55:19  [ http-nio-8080-exec-1:62565417 ] - [ DEBUG ]  GET "/t_page", parameters={}
+2019-08-06 13:55:19  [ http-nio-8080-exec-1:62565421 ] - [ DEBUG ]  Mapped to public java.lang.String cn.lyy.hp.controller.WebDataController.t_page()
+2019-08-06 13:55:19  [ http-nio-8080-exec-1:62565422 ] - [ INFO ]  ---------------request----------------
+2019-08-06 13:55:19  [ http-nio-8080-exec-1:62565422 ] - [ INFO ]  URL : http://localhost:8080/t_page
+2019-08-06 13:55:19  [ http-nio-8080-exec-1:62565423 ] - [ INFO ]  HTTP_METHOD : GET
+2019-08-06 13:55:19  [ http-nio-8080-exec-1:62565423 ] - [ INFO ]  IP : 0:0:0:0:0:0:0:1
+2019-08-06 13:55:19  [ http-nio-8080-exec-1:62565423 ] - [ INFO ]  ---------------response----------------
+2019-08-06 13:55:19  [ http-nio-8080-exec-1:62565423 ] - [ INFO ]  RESPONSE : t_page
+2019-08-06 13:55:19  [ http-nio-8080-exec-1:62565424 ] - [ DEBUG ]  Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, image/apng, application/signed-exchange;v=b3, application/xml;q=0.9, */*;q=0.8]
+2019-08-06 13:55:19  [ http-nio-8080-exec-1:62565424 ] - [ DEBUG ]  View name 't_page', model {}
+2019-08-06 13:55:19  [ http-nio-8080-exec-1:62565424 ] - [ DEBUG ]  Forwarding to [/WEB-INF/views/t_page.jsp]
+2019-08-06 13:55:19  [ http-nio-8080-exec-1:62565426 ] - [ DEBUG ]  Completed 200 OK
+2019-08-06 13:55:20  [ http-nio-8080-exec-2:62566045 ] - [ DEBUG ]  GET "/index", parameters={}
+2019-08-06 13:55:20  [ http-nio-8080-exec-2:62566045 ] - [ DEBUG ]  Mapped to public java.lang.String cn.lyy.hp.controller.HomeController.home()
+2019-08-06 13:55:20  [ http-nio-8080-exec-2:62566046 ] - [ INFO ]  ---------------request----------------
+2019-08-06 13:55:20  [ http-nio-8080-exec-2:62566046 ] - [ INFO ]  URL : http://localhost:8080/index
+2019-08-06 13:55:20  [ http-nio-8080-exec-2:62566046 ] - [ INFO ]  HTTP_METHOD : GET
+2019-08-06 13:55:20  [ http-nio-8080-exec-2:62566046 ] - [ INFO ]  IP : 0:0:0:0:0:0:0:1
+2019-08-06 13:55:20  [ http-nio-8080-exec-2:62566046 ] - [ INFO ]  ---------------response----------------
+2019-08-06 13:55:20  [ http-nio-8080-exec-2:62566046 ] - [ INFO ]  RESPONSE : index
+2019-08-06 13:55:20  [ http-nio-8080-exec-2:62566047 ] - [ DEBUG ]  Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, image/apng, application/signed-exchange;v=b3, application/xml;q=0.9, */*;q=0.8]
+2019-08-06 13:55:20  [ http-nio-8080-exec-2:62566047 ] - [ DEBUG ]  View name 'index', model {}
+2019-08-06 13:55:20  [ http-nio-8080-exec-2:62566048 ] - [ DEBUG ]  Forwarding to [/WEB-INF/views/index.jsp]
+2019-08-06 13:55:20  [ http-nio-8080-exec-2:62566048 ] - [ DEBUG ]  Completed 200 OK

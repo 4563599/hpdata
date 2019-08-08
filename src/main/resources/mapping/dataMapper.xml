@@ -4,23 +4,255 @@
     <select id="getData" resultType="cn.lyy.hp.bean.Data">
         SELECT *
         from datas
-        order
-        by
-        id
-        DESC
-        limit
-        1
+        order by
+            id
+            DESC
+            limit
+            1
     </select>
 
 
     <select id="getPictures" resultType="cn.lyy.hp.bean.Data">
         SELECT *
         from pictures
-        order
-        by
-        id
-        DESC
-        limit
-        6
+        order by
+            id
+            DESC
+            limit
+            6
     </select>
+
+
+    <insert id="saveA1_variance">
+        INSERT INTO datas (A1_variance)
+        VALUES (#{A1_variance})
+    </insert>
+
+
+    <insert id="saveA2_variance">
+        INSERT INTO datas (A2_variance)
+        VALUES (#{A2_variance})
+    </insert>
+
+    <insert id="saveA3_variance">
+        INSERT INTO datas (A3_variance)
+        VALUES (#{A3_variance})
+    </insert>
+
+
+    <insert id="saveAx_variance">
+        INSERT INTO datas (Ax_variance)
+        VALUES (#{Ax_variance})
+    </insert>
+
+
+    <insert id="saveAy_variance">
+        INSERT INTO datas (Ay_variance)
+        VALUES (#{Ay_variance})
+    </insert>
+
+    <insert id="saveAz_variance">
+        INSERT INTO datas (Az_variance)
+        VALUES (#{Az_variance})
+    </insert>
+
+    <insert id="savePressure1_mean">
+        INSERT INTO datas (Pressure1_mean)
+        VALUES (#{Pressure1_mean})
+    </insert>
+
+    <insert id="saveT1">
+        INSERT INTO datas (T1)
+        VALUES (#{T1})
+    </insert>
+
+    <insert id="saveT2">
+        INSERT INTO datas (T2)
+        VALUES (#{T2})
+    </insert>
+
+
+    <insert id="saveT3">
+        INSERT INTO datas (T3)
+        VALUES (#{T3})
+    </insert>
+
+
+    <insert id="saveT4">
+        INSERT INTO datas (T4)
+        VALUES (#{T4})
+    </insert>
+
+
+    <insert id="saveT5">
+        INSERT INTO datas (T5)
+        VALUES (#{T5})
+    </insert>
+
+
+    <insert id="saveHumidity1_mean">
+        INSERT INTO datas (Humidity1_mean)
+        VALUES (#{Humidity1_mean})
+    </insert>
+
+
+    <insert id="saveHumidity2_mean">
+        INSERT INTO datas (Humidity2_mean)
+        VALUES (#{Humidity2_mean})
+    </insert>
+
+
+    <insert id="saveHumidity3_mean">
+        INSERT INTO datas (Humidity3_mean)
+        VALUES (#{Humidity3_mean})
+    </insert>
+
+
+    <insert id="saveHumidity4_mean">
+        INSERT INTO datas (Humidity4_mean)
+        VALUES (#{Humidity4_mean})
+    </insert>
+
+
+    <insert id="saveHumidity5_mean">
+        INSERT INTO datas (Humidity5_mean)
+        VALUES (#{Humidity5_mean})
+    </insert>
+
+
+    <insert id="saveV1_mean">
+        INSERT INTO datas (V1_mean)
+        VALUES (#{V1_mean})
+    </insert>
+
+    <insert id="saveV2_mean">
+        INSERT INTO datas (V2_mean)
+        VALUES (#{V2_mean})
+    </insert>
+    <insert id="saveV3_mean">
+        INSERT INTO datas (V3_mean)
+        VALUES (#{V3_mean})
+    </insert>
+    <insert id="saveV4_mean">
+        INSERT INTO datas (V4_mean)
+        VALUES (#{V4_mean})
+    </insert>
+    <insert id="saveV5_mean">
+        INSERT INTO datas (V5_mean)
+        VALUES (#{V5_mean})
+    </insert>
+    <insert id="saveV6_mean">
+        INSERT INTO datas (V6_mean)
+        VALUES (#{V6_mean})
+    </insert>
+
+
+    <insert id="saveV7_mean">
+        INSERT INTO datas (V7_mean)
+        VALUES (#{V7_mean})
+    </insert>
+    <insert id="saveV8_mean">
+        INSERT INTO datas (V8_mean)
+        VALUES (#{V8_mean})
+    </insert>
+    <insert id="saveV9_mean">
+        INSERT INTO datas (V9_mean)
+        VALUES (#{V9_mean})
+    </insert>
+    <insert id="saveV10_mean">
+        INSERT INTO datas (V10_mean)
+        VALUES (#{V10_mean})
+    </insert>
+
+
+    <insert id="saveV11_mean">
+        INSERT INTO datas (V11_mean)
+        VALUES (#{V11_mean})
+    </insert>
+
+
+    <insert id="saveV12_mean">
+        INSERT INTO datas (V12_mean)
+        VALUES (#{V12_mean})
+    </insert>
+
+
+    <insert id="saveV13_mean">
+        INSERT INTO datas (V13_mean)
+        VALUES (#{V13_mean})
+    </insert>
+
+
+    <insert id="saveV14_mean">
+        INSERT INTO datas (V14_mean)
+        VALUES (#{V14_mean})
+    </insert>
+
+
+    <insert id="saveV15_mean">
+        INSERT INTO datas (V15_mean)
+        VALUES (#{V15_mean})
+    </insert>
+
+
+    <insert id="saveV16_mean">
+        INSERT INTO datas (V16_mean)
+        VALUES (#{V16_mean})
+    </insert>
+
+
+    <insert id="saverainfall_mean">
+        INSERT INTO datas (rainfall_mean)
+        VALUES (#{rainfall_mean})
+    </insert>
+
+
+    <insert id="saveilluminance_mean">
+        INSERT INTO datas (illuminance_mean)
+        VALUES (#{illuminance_mean})
+    </insert>
+
+
+    <insert id="savedisplacement1_mean">
+        INSERT INTO datas (displacement1_mean)
+        VALUES (#{displacement1_mean})
+    </insert>
+
+
+    <insert id="savedisplacement2_mean">
+        INSERT INTO datas (displacement2_mean)
+        VALUES (#{displacement2_mean})
+    </insert>
+
+
+    <insert id="saveFormatTime">
+        INSERT INTO datas (FormatTime)
+        VALUES (#{FormatTime})
+    </insert>
+
+
+    <insert id="saveTime">
+        INSERT INTO datas (Time)
+        VALUES (#{Time})
+    </insert>
+
+
+    <insert id="saveDatas">
+        INSERT INTO datas (A1_variance, A2_variance, A3_variance, Ax_variance, Ay_variance, Az_variance, Pressure1_mean,
+                           T1, T2, T3, T4, T5, Humidity1_mean, Humidity2_mean, Humidity3_mean, Humidity4_mean,
+                           Humidity5_mean, V1_mean, V2_mean, V3_mean, V4_mean, V5_mean, V6_mean, V7_mean, V8_mean,
+                           V9_mean, V10_mean, V11_mean, V12_mean, V13_mean, V14_mean, V15_mean, V16_mean, Rainfall_mean,
+                           Illuminance_mean, Displacement1_mean,
+                           Displacement2_mean, Time, FormatTime)
+        VALUES
+        (#{A1_variance}, #{A2_variance},
+         #{A3_variance},
+         #{Ax_variance},
+         #{Ay_variance}, #{Az_variance}, #{Pressure1_mean}, #{T1}, #{T2}, #{T3}, #{T4}, #{T5}, #{Humidity1_mean},
+         #{Humidity2_mean}, #{Humidity3_mean}, #{Humidity4_mean}, #{Humidity5_mean}, #{V1_mean}, #{V2_mean}, #{V3_mean},
+         #{V4_mean}, #{V5_mean}, #{V6_mean}, #{V7_mean}, #{V8_mean}, #{V9_mean}, #{V10_mean}, #{V11_mean}, #{V12_mean},
+         #{V13_mean}, #{V14_mean}, #{V15_mean}, #{V16_mean},
+         #{Rainfall_mean}, #{Illuminance_mean}, #{Displacement1_mean}, #{Displacement2_mean}, #{Time}, #{FormatTime})
+    </insert>
+
 </mapper>

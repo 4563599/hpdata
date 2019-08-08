@@ -1,2 +1,35 @@
-2019-08-03 16:46:33  [ http-nio-8080-exec-9:598037 ] - [ ERROR ]  java.lang.NullPointerException
-2019-08-03 16:46:33  [ http-nio-8080-exec-9:598049 ] - [ ERROR ]  异常:------->java.lang.NullPointerException
+2019-08-07 11:30:26  [ http-nio-8080-exec-3:55970 ] - [ ERROR ]  异常:------->org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public cn.lyy.hp.filesystem.response.ResponseResult cn.lyy.hp.controller.HPDataController.getInfo(cn.lyy.hp.bean.HPData)
+2019-08-07 11:32:04  [ http-nio-8080-exec-2:16755 ] - [ ERROR ]  异常:------->org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public cn.lyy.hp.filesystem.response.ResponseResult cn.lyy.hp.controller.HPDataController.getJsonInfo(java.lang.String)
+2019-08-07 11:40:05  [ http-nio-8080-exec-2:11177 ] - [ ERROR ]  异常:------->org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public cn.lyy.hp.filesystem.response.ResponseResult cn.lyy.hp.controller.HPDataController.getJsonInfo(cn.lyy.hp.bean.HPData)
+2019-08-07 11:40:17  [ http-nio-8080-exec-3:23942 ] - [ ERROR ]  异常:------->org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public cn.lyy.hp.filesystem.response.ResponseResult cn.lyy.hp.controller.HPDataController.getJsonInfo(cn.lyy.hp.bean.HPData)
+2019-08-07 11:42:35  [ http-nio-8080-exec-5:161587 ] - [ ERROR ]  异常:------->org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public cn.lyy.hp.filesystem.response.ResponseResult cn.lyy.hp.controller.HPDataController.getJsonInfo(cn.lyy.hp.bean.HPData)
+2019-08-07 11:43:49  [ http-nio-8080-exec-8:235232 ] - [ ERROR ]  异常:------->org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public cn.lyy.hp.filesystem.response.ResponseResult cn.lyy.hp.controller.HPDataController.getJsonInfo(cn.lyy.hp.bean.HPData)
+2019-08-07 13:27:18  [ http-nio-8080-exec-3:6444726 ] - [ ERROR ]  异常:------->org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public cn.lyy.hp.filesystem.response.ResponseResult cn.lyy.hp.controller.HPDataController.getJsonInfo(cn.lyy.hp.bean.HPData)
+2019-08-07 13:38:06  [ http-nio-8080-exec-1:7092017 ] - [ ERROR ]  异常:------->org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public cn.lyy.hp.filesystem.response.ResponseResult cn.lyy.hp.controller.HPDataController.getJsonInfo(cn.lyy.hp.bean.HPData)
+2019-08-07 13:43:19  [ http-nio-8080-exec-1:27538 ] - [ ERROR ]  异常:------->org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public cn.lyy.hp.filesystem.response.ResponseResult cn.lyy.hp.controller.HPDataController.getJsonInfo(cn.lyy.hp.bean.HPData)
+2019-08-07 13:46:18  [ http-nio-8080-exec-5:207300 ] - [ ERROR ]  异常:------->org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public cn.lyy.hp.filesystem.response.ResponseResult cn.lyy.hp.controller.HPDataController.getJsonInfo(cn.lyy.hp.bean.HPData)
+2019-08-07 13:46:56  [ http-nio-8080-exec-6:244556 ] - [ ERROR ]  异常:------->org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public cn.lyy.hp.filesystem.response.ResponseResult cn.lyy.hp.controller.HPDataController.getJsonInfo(cn.lyy.hp.bean.HPData)
+2019-08-07 16:43:52  [ http-nio-8080-exec-1:81962 ] - [ ERROR ]  异常:------->org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Table 'data_hp.data_hp' doesn't exist
+### The error may exist in file [C:\lyy\hpspringboot\target\classes\mapping\dataMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: INSERT INTO data_hp (A1_variance)         VALUES (?)
+### Cause: java.sql.SQLSyntaxErrorException: Table 'data_hp.data_hp' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'data_hp.data_hp' doesn't exist
+2019-08-07 16:45:18  [ http-nio-8080-exec-3:167858 ] - [ ERROR ]  异常:------->org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Table 'data_hp.data_hp' doesn't exist
+### The error may exist in file [C:\lyy\hpspringboot\target\classes\mapping\dataMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: INSERT INTO data_hp (A1_variance)         VALUES (?)
+### Cause: java.sql.SQLSyntaxErrorException: Table 'data_hp.data_hp' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'data_hp.data_hp' doesn't exist
+2019-08-07 16:45:48  [ http-nio-8080-exec-2:25526 ] - [ ERROR ]  异常:------->org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'id' doesn't have a default value
+### The error may exist in file [C:\lyy\hpspringboot\target\classes\mapping\dataMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: INSERT INTO datas (A1_variance)         VALUES (?)
+### Cause: java.sql.SQLException: Field 'id' doesn't have a default value
+; Field 'id' doesn't have a default value; nested exception is java.sql.SQLException: Field 'id' doesn't have a default value

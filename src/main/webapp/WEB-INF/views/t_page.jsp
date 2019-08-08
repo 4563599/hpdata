@@ -48,7 +48,7 @@ document.body.clientHeight;</script>
         function loadData(hour_num) {
             var data;
             $.ajax({
-                url: "http://119.3.5.25:8080/hpserver/get_t1",
+                url: "http://119.3.5.25:8080/hpserver/get_T1",
                 type: "GET",
                 data: {
                     "hour": hour_num,
@@ -62,8 +62,8 @@ document.body.clientHeight;</script>
                     //     alert("加载数据失败...");
                     // }
 
-                    var min = result.baseDataList.min;
-                    var max = result.baseDataList.max;
+                    var min = result.baseNumData.min;
+                    var max = result.baseNumData.max;
 
 
                     data = result.baseDataList.map(function (v) {
@@ -106,7 +106,7 @@ document.body.clientHeight;</script>
 
 
                     $('#table').bootstrapTable({
-                        url: 'http://119.3.5.25:8080/hpserver/get_t1?hour=5',
+                        url: 'http://119.3.5.25:8080/hpserver/get_T1?hour=5',
                         columns: [{
                             field: 'id',
                             title: '编号',

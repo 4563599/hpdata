@@ -1,8 +1,10 @@
 package cn.lyy.hp.controller;
 
+import cn.jiguang.common.resp.BooleanResult;
 import cn.jpush.api.JPushClient;
 import cn.jpush.api.push.PushResult;
 import cn.jpush.api.push.model.PushPayload;
+import cn.lyy.hp.bean.HPData;
 import cn.lyy.hp.bean.SimpleDatasBean;
 import cn.lyy.hp.data.Data;
 import cn.lyy.hp.filesystem.response.CommonCode;
@@ -11,12 +13,12 @@ import cn.lyy.hp.service.DataService;
 import cn.lyy.hp.utils.AjaxResult;
 import cn.lyy.hp.utils.JpushUtil;
 import cn.lyy.hp.websocket.ChatMessageHandler;
+import com.google.gson.Gson;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.socket.TextMessage;
 
 import java.text.SimpleDateFormat;
@@ -38,15 +40,32 @@ public class HPDataController {
     @ResponseBody
     public ResponseResult getInfo(@RequestParam(value = "datas", defaultValue = "0") String datas) {
         log.debug("data :  " + datas + "\n");
-        Date d = new Date();
-        System.out.println(d);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String dateNowStr = sdf.format(d);
+        try {
+            Gson gson = new Gson();
+            HPData hpData = gson.fromJson(datas, HPData.class);
+            Date d = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String dateNowStr = sdf.format(d);
 
-//        String result = "时间-" + dateNowStr + "数据-" + collect_data;
-        String result = "时间：    " + dateNowStr + "   数据:" + datas;
-        ResponseResult responseResult = new ResponseResult(CommonCode.SUCCESS, datas);
-        messageHandler.sendMessageToUsers(new TextMessage(result));
+            dataService.saveHPDatas(hpData, dateNowStr);
+            ResponseResult responseResult = new ResponseResult(CommonCode.SUCCESS, datas);
+            String result = "时间：    " + dateNowStr + "   数据:" + datas;
+            messageHandler.sendMessageToUsers(new TextMessage(result));
+            return responseResult;
+        } catch (Exception e) {
+            ResponseResult responseResult = new ResponseResult(CommonCode.FAIL, e.toString());
+            return responseResult;
+        }
+
+    }
+
+
+    //    @RequestMapping("/upload_data_json")
+    @PostMapping(value = "/upload_data_json", produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public ResponseResult getJsonInfo(@RequestBody HPData hpData) {
+        ResponseResult responseResult = new ResponseResult(CommonCode.SUCCESS, hpData.toString());
         return responseResult;
     }
 

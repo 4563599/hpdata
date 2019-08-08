@@ -20,6 +20,11 @@
     <!-- Custom styles for this template -->
     <link href="${APP_PATH}/css/starter-template.css" rel="stylesheet">
     <![endif]-->
+    <style>
+        span {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -43,22 +48,55 @@
 
     <!-- Example row of columns -->
     <div class="row">
-        <div class="col-lg-4">
-            <h2>温度数据监测</h2>
+        <div class="col-lg-3">
+            <h2><span>温度</span>数据监测</h2>
             <p class="text-danger">采用VI子程序技术作为温度值的输入，设置了温度值的输出模式（摄氏或华氏），输出数据统计信息包括最大值、最小值、平均值，运行后的动态显示到界面文本.</p>
             <p><a class="btn btn-primary" href="${APP_PATH}/t_page" role="button">点击查看详细数据 &raquo;</a></p>
         </div>
-        <div class="col-lg-4">
-            <h2>湿度数据监测</h2>
+        <div class="col-lg-3">
+            <h2><span>湿度</span>数据监测</h2>
             <p class="text-danger">采用VI子程序技术作为温度值的输入，设置了湿度的输出模式，输出数据统计信息包括最大值、最小值、平均值，运行后的动态显示到界面文本.</p>
             <p><a class="btn btn-primary" href="#" role="button">点击查看详细数据 &raquo;</a></p>
         </div>
-        <div class="col-lg-4">
-            <h2>孔隙压数据监测</h2>
+        <div class="col-lg-3">
+            <h2><span>孔隙压</span>数据监测</h2>
+            <p class="text-danger">采用VI子程序技术作为空隙压的输入，设置了空隙压的输出模式，输出数据统计信息包括最大值、最小值、平均值，运行后的动态显示到界面文本.</p>
+            <p><a class="btn btn-primary" href="#" role="button">点击查看详细数据 &raquo;</a></p>
+        </div>
+
+        <div class="col-lg-3">
+            <h2><span>加速度</span>数据监测</h2>
             <p class="text-danger">采用VI子程序技术作为空隙压的输入，设置了空隙压的输出模式，输出数据统计信息包括最大值、最小值、平均值，运行后的动态显示到界面文本.</p>
             <p><a class="btn btn-primary" href="#" role="button">点击查看详细数据 &raquo;</a></p>
         </div>
     </div>
+
+
+    <div class="row">
+        <div class="col-lg-3">
+            <h2><span>降雨量</span>数据监测</h2>
+            <p class="text-danger">采用VI子程序技术作为温度值的输入，设置了温度值的输出模式（摄氏或华氏），输出数据统计信息包括最大值、最小值、平均值，运行后的动态显示到界面文本.</p>
+            <p><a class="btn btn-primary" href="${APP_PATH}/t_page" role="button">点击查看详细数据 &raquo;</a></p>
+        </div>
+        <div class="col-lg-3">
+            <h2><span>光照度</span>数据监测</h2>
+            <p class="text-danger">采用VI子程序技术作为温度值的输入，设置了湿度的输出模式，输出数据统计信息包括最大值、最小值、平均值，运行后的动态显示到界面文本.</p>
+            <p><a class="btn btn-primary" href="#" role="button">点击查看详细数据 &raquo;</a></p>
+        </div>
+        <div class="col-lg-3">
+            <h2><span>电极电势</span>数据监测</h2>
+            <p class="text-danger">采用VI子程序技术作为空隙压的输入，设置了空隙压的输出模式，输出数据统计信息包括最大值、最小值、平均值，运行后的动态显示到界面文本.</p>
+            <p><a class="btn btn-primary" href="#" role="button">点击查看详细数据 &raquo;</a></p>
+        </div>
+
+        <div class="col-lg-3">
+            <h2><span>地表位移</span>数据监测</h2>
+            <p class="text-danger">采用VI子程序技术作为空隙压的输入，设置了空隙压的输出模式，输出数据统计信息包括最大值、最小值、平均值，运行后的动态显示到界面文本.</p>
+            <p><a class="btn btn-primary" href="#" role="button">点击查看详细数据 &raquo;</a></p>
+        </div>
+    </div>
+
+
 
 </div><!-- /.container -->
 <%--<a href="test"><h1>跳转测试</h1></a>--%>
