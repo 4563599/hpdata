@@ -34,9 +34,9 @@ public class HomeController {
         return "upload_test_oss";
     }
 
-    @GetMapping(value = "/current_data")
-    public String current_data() {
-        return "current_data";
+    @GetMapping(value = "/current_page")
+    public String current_page() {
+        return "current_page";
     }
 
 
