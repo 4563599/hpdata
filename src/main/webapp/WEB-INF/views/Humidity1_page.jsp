@@ -48,7 +48,7 @@ document.body.clientHeight;</script>
         function loadData(hour_num) {
             var data;
             $.ajax({
-                url: "http://119.3.5.25:8080/hpserver/get_T1",
+                url: "http://119.3.5.25:8080/hpserver/get_Humidity1_mean",
                 type: "GET",
                 data: {
                     "hour": hour_num,
@@ -129,7 +129,7 @@ document.body.clientHeight;</script>
 
 
                     $('#table').bootstrapTable({
-                        url: 'http://119.3.5.25:8080/hpserver/get_T1?hour=5',
+                        url: 'http://119.3.5.25:8080/hpserver/get_Humidity1_mean?hour=5',
                         columns: [{
                             field: 'id',
                             title: '编号',

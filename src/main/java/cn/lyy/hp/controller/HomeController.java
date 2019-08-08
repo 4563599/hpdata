@@ -39,5 +39,42 @@ public class HomeController {
         return "current_page";
     }
 
+    @GetMapping(value = "/Humidity1_page")
+    public String Humidity1_page() {
+        return "Humidity1_page";
+    }
+
+
+    @GetMapping(value = "/Pressure1_page")
+    public String Pressure1_page() {
+        return "Pressure1_page";
+    }
+
+    @GetMapping(value = "/A1_page")
+    public String A1_page() {
+        return "A1_page";
+    }
+
+
+    @GetMapping(value = "/rainfall_page")
+    public String rainfall_page() {
+        return "rainfall_page";
+    }
+
+    @GetMapping(value = "/illuminance_page")
+    public String illuminance_page() {
+        return "illuminance_page";
+    }
+
+
+    @GetMapping(value = "/V1_page")
+    public String V1_page() {
+        return "V1_page";
+    }
+
+    @GetMapping(value = "/displacement1_page")
+    public String displacement1_page() {
+        return "displacement1_page";
+    }
 
 }
