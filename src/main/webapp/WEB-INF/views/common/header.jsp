@@ -37,7 +37,7 @@
                         <li><a href="${APP_PATH}/upload_test">数据上传测试</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="push_page">推送功能</a></li>
-                        <li><a href="current_data">数据实时监测功能</a></li>
+                        <li><a href="${APP_PATH}/current_page">数据实时监测功能</a></li>
                     </ul>
                 </li>
 
