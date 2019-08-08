@@ -42,7 +42,7 @@ document.body.clientHeight;</script>
     <script>
 
         $(function () {
-            loadData(5);
+            loadData(1);
         });
 
         function loadData(hour_num) {
@@ -67,37 +67,60 @@ document.body.clientHeight;</script>
 
 
                     data = result.baseDataList.map(function (v) {
-                        return {time: v.time, num: v.num}
+                        return { num: +v.num,time: v.time}
                     });
 
-                    var chart = new G2.Chart({
-                        container: 'mountNode',
+                    // var chart = new G2.Chart({
+                    //     container: 'mountNode',
+                    //     forceFit: true,
+                    //     width: 1000,
+                    //     height: 500,
+                    //     padding: [20, 20, 95, 80] // 上，右，下，左
+                    // });
+                    // chart.source(data, {
+                    //     num: {
+                    //         min: min,
+                    //         max: max,
+                    //         tickCount: 5,
+                    //     },
+                    // });
+                    //
+                    // chart.scale('time', {
+                    //     range: [0, 1],
+                    //     tickCount: 10,
+                    //     // type: 'timeCat',
+                    //     mask: 'HH:MM',
+                    // });
+                    // chart.tooltip({
+                    //     crosshairs: {
+                    //         type: 'line'
+                    //     }
+                    // });
+                    // chart.line().position('time*num');
+                    // chart.point().position('time*num').size(1).shape('circle').style({
+                    //     stroke: '#fff',
+                    //     lineWidth: 1
+                    // });
+                    // chart.render();
+
+
+                    const chart = new G2.Chart({
+                        container : 'mountNode',
                         forceFit: true,
-                        width: 1000,
-                        height: 500,
-                        padding: [20, 20, 95, 80] // 上，右，下，左
+                        height : 400
                     });
                     chart.source(data, {
-                        num: {
-                            min: min,
-                            max: max,
-                            tickCount: 5,
+                        'time': {
+                            type: 'time',
+                            nice: false,
+                            mask: 'HH:mm'
                         },
-                        time: {
-                            tickCount: 3
-                        }
                     });
-
-                    chart.tooltip({
-                        crosshairs: {
-                            type: 'line'
-                        }
-                    });
-                    chart.line().position('time*num');
+                    chart.line().position('time*num').shape('smooth').size(2);
                     chart.point().position('time*num').size(1).shape('circle').style({
-                        stroke: '#fff',
-                        lineWidth: 1
-                    });
+                        stroke: '#f00',
+                        lineWidth: 2
+                    })
                     chart.render();
 
                     // var data = result.baseDataList.map(function (v) {
